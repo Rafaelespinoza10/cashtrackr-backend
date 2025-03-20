@@ -1,0 +1,44 @@
+{
+  "name": "cashtrackr",
+  "version": "1.0.0",
+  "description": "proyecto react, typescript, nodejs y prisma",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "dev:api": "nodemon src/index.ts --api",
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "prisma:generate": "npx prisma generate --schema=./src/database/prisma/schema.prisma",
+    "prisma:migrate": "npx prisma migrate dev --create-only --schema=./src/database/prisma/schema.prisma --name",
+    "prisma:deploy": "npx prisma migrate deploy --schema=./src/database/prisma/schema.prisma",
+    "prisma:status": "npx prisma migrate status --schema=./src/database/prisma/schema.prisma",
+    "prisma:rollback": "npx prisma migrate diff --from-schema-datamodel  ./src/database/prisma/schema.prisma --to-schema-datasource",
+    "prisma:studio": "npx prisma studio --schema=./src/database/prisma/schema.prisma",
+    "prisma:reset": "npx prisma migrate reset --schema=./src/database/prisma/schema.prisma"
+  },
+  "author": "rafael moreno",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.3.1",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
+    "colors": "^1.4.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate": "^0.0.1",
+    "express-rate-limit": "^7.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "limit": "^0.0.1",
+    "morgan": "^1.10.0",
+    "prisma": "^6.3.1",
+    "sib-api-v3-sdk": "^8.5.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/morgan": "^1.9.9",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
